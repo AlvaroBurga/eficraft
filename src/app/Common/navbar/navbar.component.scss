@@ -1,0 +1,38 @@
+.navbar {
+    background-color: #6f42c1; /* Purple background */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding around the navbar */
+    display: flex;
+    justify-content: space-between; /* Evenly space items */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-content {
+    display: flex;
+    width: 100%; /* Full width */
+    justify-content: space-between; /* Space between left and right */
+}
+
+.navbar-left {
+    display: flex; /* Align items horizontally */
+}
+
+.navbar-right {
+    display: flex; /* Align items horizontally */
+}
+
+.navbar-item {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Remove underline */
+    margin: 0 15px; /* Spacing between items */
+    display: flex; /* Align icon and text horizontally */
+    align-items: center; /* Center icon and text vertically */
+}
+
+.navbar-item i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.navbar-item:hover {
+    text-decoration: underline; /* Underline effect on hover */
+}

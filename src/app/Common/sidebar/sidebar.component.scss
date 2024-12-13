@@ -1,0 +1,35 @@
+.sidebar {
+    background-color: #007bff; /* Blue background */
+    color: white; /* Text color */
+    height: 100vh; /* Full vertical height */
+    padding: 20px; /* Padding around the content */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Right shadow for separation */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px; /* Space between the heading and links */
+}
+
+.sidebar-link {
+    display: block; /* Make the link a block element */
+    background-color: #0056b3; /* Darker blue for the link background */
+    color: white; /* Text color for the links */
+    padding: 10px 15px; /* Padding around the link */
+    margin-bottom: 10px; /* Space between the links */
+    border-radius: 5px; /* Slightly rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.sidebar-link:hover {
+    background-color: #004494; /* Change color on hover */
+}
+
+.brand-link {
+    font-size: 3em; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+    margin-bottom: 100px;
+}
