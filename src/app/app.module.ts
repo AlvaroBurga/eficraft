@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +16,7 @@ import { ReferencesComponent } from './Core/references/references.component';
 import { FactsComponent } from './Core/facts/facts.component';
 import { ContentComponent } from './Core/content/content.component';
 import { CoreComponent } from './Core/core/core.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { CoreComponent } from './Core/core/core.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
