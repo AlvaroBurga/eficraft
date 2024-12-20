@@ -1,5 +1,8 @@
+$primary-color: #B5DADC;
+$secondary-color: #487BA2;
+
 .navbar {
-    background-color: #6f42c1; /* Purple background */
+    background-color: $secondary-color; /* Purple background */
     color: white; /* Text color */
     padding: 10px 20px; /* Padding around the navbar */
     display: flex;

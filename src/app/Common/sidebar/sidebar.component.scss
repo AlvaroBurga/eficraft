@@ -1,5 +1,8 @@
+$primary-color: #B5DADC;
+$secondary-color: #487BA2;
+
 .sidebar {
-    background-color: #007bff; /* Blue background */
+    background-color: $primary-color;/* Blue background */
     color: white; /* Text color */
     height: 100vh; /* Full vertical height */
     padding: 20px; /* Padding around the content */
@@ -15,7 +18,7 @@
 
 .sidebar-link {
     display: block; /* Make the link a block element */
-    background-color: #0056b3; /* Darker blue for the link background */
+    background-color: darken($primary-color, 10%); /* Darker blue for the link background */
     color: white; /* Text color for the links */
     padding: 10px 15px; /* Padding around the link */
     margin-bottom: 10px; /* Space between the links */
@@ -25,7 +28,7 @@
 }
 
 .sidebar-link:hover {
-    background-color: #004494; /* Change color on hover */
+    background-color: darken($primary-color, 30%); /* Change color on hover */
 }
 
 .brand-link {
@@ -33,3 +36,14 @@
     font-weight: bold; /* Make the text bold */
     margin-bottom: 100px;
 }
+
+.efficraft-logo {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+  }
+  
+  .efficraft-logo img {
+    max-width: 60%;         /* Responsive */
+    height: auto;            /* Maintain aspect ratio */
+  }

@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap';
+
+$primary-color: #B5DADC;
+$secondary-color: #487BA2;
+
+a {
+    cursor: pointer;
+  }
