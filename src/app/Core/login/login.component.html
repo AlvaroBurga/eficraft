@@ -2,9 +2,8 @@
     <div class="row justify-content-center">
         <div class="card shadow">
             <div class="card-body">
-                <h2 class="text-center text-primary">Welcome to Efficraft</h2>
                 <div class="efficraft-logo">
-                    <img src="assets/images/logos/efficraft-main-logo.png" >
+                    <img src="assets/images/logos/new-efficraft-transparent.png" >
                 </div>
                 <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
                     <div class="form-group">
@@ -18,7 +17,7 @@
                             name="email"
                         />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-4">
                         <label for="password">Password</label>
                         <input
                             type="password"
@@ -37,7 +36,7 @@
                             Sign Up
                         </button>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center mt-3">
                         <p><a href="#" (click)="recoverPassword()">Have you forgotten your password?</a></p>
                     </div>
                 </form>

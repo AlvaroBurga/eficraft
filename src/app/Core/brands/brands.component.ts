@@ -10,8 +10,7 @@ export class BrandsComponent implements OnInit {
 
   imageUrls: string[] = [];
   currentPage: number = 0;
-  pageSize: number = 5;
-  addImage: string = 'assets/images/others/add.png';
+  pageSize: number = 6;
   displayedImages: string[] = [];  
 
   constructor(private brandService : BrandService) { }
@@ -39,8 +38,6 @@ export class BrandsComponent implements OnInit {
   updateDisplayedImages(): void {
     const startIndex = this.currentPage * this.pageSize;
     this.displayedImages = this.imageUrls.slice(startIndex, startIndex + this.pageSize);
-    // Append the fixed image
-    this.displayedImages.push(this.addImage);
   }
   
 

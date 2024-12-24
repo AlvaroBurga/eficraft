@@ -10,7 +10,7 @@
   .search-input {
     border: none;
     outline: none;
-    width: 100%;
+    flex: 1;
     padding: 5px;
   }
   
@@ -52,6 +52,29 @@
     padding: 5px;
   }
 
-  .title{
-    font-size: 4rem; 
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
+
+  .add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    background-color: #487BA2;
+    color: white; 
+    border: none; 
+    cursor: pointer;
+    font-size: 24px; 
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.add-button:hover {
+    background-color: darken(#487BA2, 20%); 
+}

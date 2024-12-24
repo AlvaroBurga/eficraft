@@ -18,8 +18,7 @@ export class BrandService {
       'assets/images/brands/image2.png',
       'assets/images/brands/image3.png',
       'assets/images/brands/image4.png',
-      'assets/images/brands/image5.png',
-      'assets/images/brands/image6.png'
+      'assets/images/brands/image5.png'
     ];
     return of(images); 
   }
