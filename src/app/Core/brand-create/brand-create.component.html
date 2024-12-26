@@ -1,0 +1,60 @@
+<div class="brand-create-container">
+    <h2>Create New Brand</h2>
+    <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" formControlName="name">
+            <div *ngIf="brandForm.get('name')?.invalid && brandForm.get('name')?.touched" class="error-message">
+                Name is required.
+            </div>
+        </div>
+        <div>
+            <label for="nonPropietaryName">Non-Proprietary Name:</label>
+            <input type="text" id="nonPropietaryName" formControlName="nonPropietaryName">
+            <div *ngIf="brandForm.get('nonPropietaryName')?.invalid && brandForm.get('nonPropietaryName')?.touched" class="error-message">
+                Non-Proprietary Name is required.
+            </div>
+        </div>
+        <div>
+            <label for="drugType">Drug Type:</label>
+            <select id="drugType" formControlName="drugType">
+                <option value="" disabled selected>Select a drug type</option>
+                <option *ngFor="let type of drugTypes" [value]="type">{{ type }}</option>
+            </select>
+            <div *ngIf="brandForm.get('drugType')?.invalid && brandForm.get('drugType')?.touched" class="error-message">
+                Drug Type is required.
+            </div>
+        </div>
+        <div>
+            <label for="indication">Indication:</label>
+            <input type="text" id="indication" formControlName="indication">
+            <div *ngIf="brandForm.get('indication')?.invalid && brandForm.get('indication')?.touched" class="error-message">
+                Indication is required.
+            </div>
+        </div>
+        <div>
+            <label for="launchStatus">Launch Status:</label>
+            <select id="launchStatus" formControlName="launchStatus">
+                <option value="" disabled selected>Select a launch status</option>
+                <option *ngFor="let status of launchStatuses" [value]="status">{{ status }}</option>
+            </select>
+            <div *ngIf="brandForm.get('launchStatus')?.invalid && brandForm.get('launchStatus')?.touched" class="error-message">
+                Launch Status is required.
+            </div>
+        </div>
+        <div class="file-upload">
+            <input type="file" id="logo" (change)="onLogoUpload($event)" accept="image/*">
+            <label for="logo" class="custom-file-upload">
+                <i class="fas fa-upload"></i> Upload Logo
+            </label>
+        </div>
+        <div *ngIf="brandForm.get('logo')?.value" class="image-preview">
+            <img [src]="brandForm.get('logo')?.value" alt="Logo Preview" class="preview-image">
+        </div>
+        <div class="column">
+            <button type="submit" class="cancel-button" [routerLink]="['/core/brands']" >Cancel</button>
+            <button type="submit" class="submit-button" [disabled]="brandForm.invalid">Create Brand</button>
+        </div>
+        
+    </form>
+</div>

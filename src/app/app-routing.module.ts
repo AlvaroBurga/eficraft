@@ -7,6 +7,7 @@ import { ReferencesComponent } from './Core/references/references.component';
 import { FactsComponent } from './Core/facts/facts.component';
 import { ContentComponent } from './Core/content/content.component';
 import { BrandOverviewComponent } from './Core/brand-overview/brand-overview.component';
+import { BrandCreateComponent } from './Core/brand-create/brand-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
       path: 'core', component: CoreComponent, children: [
         { path: 'brands', component: BrandsComponent },
+        { path: 'brands/create', component: BrandCreateComponent },
         { path: 'overview', component: BrandOverviewComponent },
         { path: 'reference', component: ReferencesComponent },
         { path: 'facts', component: FactsComponent },

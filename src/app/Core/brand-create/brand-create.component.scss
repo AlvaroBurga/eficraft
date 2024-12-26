@@ -1,0 +1,123 @@
+/* src/app/brand-create/brand-create.component.css */
+
+.brand-create-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #487BA2;
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Styles for inputs and select */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #487BA2;
+    border-radius: 25px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #005f7f;
+    outline: none;
+}
+
+.submit-button:disabled {
+    background-color: #d3d3d3; /* Light gray background */
+    color: #a9a9a9; /* Dark gray text */
+    cursor: not-allowed; /* Change cursor to indicate it cannot be clicked */
+    border: 1px solid #ccc; /* Light gray border */
+    opacity: 0.7; /* Slightly transparent */
+}
+
+/* Button styles */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #487BA2;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover:not(:disabled) {
+    background-color: #005f7f;
+}
+
+.cancel-button {
+    margin-right: 10px;
+    border-radius: 25px;
+    padding-right: 5%;
+    padding-left: 5%;
+    background-color: white;
+    border: 2px solid #487BA2; 
+}
+
+/* Custom file upload styles */
+.file-upload {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    margin-bottom: 15px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;  /* Main color for button */
+    border: 2px solid #487BA2; 
+    border-radius: 5px;
+    text-align: center;
+    width: 40%; /* Make the label full width */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.custom-file-upload:hover {
+    background-color: rgba(255, 255, 255, 0.627); /* Darker shade on hover */
+}
+
+/* Hide the default file input */
+input[type="file"] {
+    display: none; /* Hide the file input so the custom button can be used */
+}
+
+/* Image preview styles */
+.image-preview {
+    margin-top: 15px;
+    text-align: center; /* Center the image preview */
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 200px; /* Limit the height for better appearance */
+    border-radius: 10px; /* Rounded corners for the preview image */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

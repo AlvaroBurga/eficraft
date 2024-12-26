@@ -17,12 +17,8 @@
   .search-button {
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: default;
     color: #666;
-  
-    &:hover {
-      color: #333;
-    }
   }
 
   .latest-brands{

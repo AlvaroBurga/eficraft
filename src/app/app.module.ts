@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Core/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrandsComponent } from './Core/brands/brands.component';
 import { SidebarComponent } from './Common/sidebar/sidebar.component';
 import { NavbarComponent } from './Common/navbar/navbar.component';
@@ -17,6 +17,7 @@ import { FactsComponent } from './Core/facts/facts.component';
 import { ContentComponent } from './Core/content/content.component';
 import { CoreComponent } from './Core/core/core.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrandCreateComponent } from './Core/brand-create/brand-create.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReferencesComponent,
     FactsComponent,
     ContentComponent,
-    CoreComponent
+    CoreComponent,
+    BrandCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
