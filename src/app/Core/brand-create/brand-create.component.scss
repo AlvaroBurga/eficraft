@@ -121,3 +121,29 @@ input[type="file"] {
     font-size: 0.9em;
     margin-top: 5px;
 }
+
+.persona-containter {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+.add-persona-button {
+    background-color: #B5DADC; /* Set the background color */
+    color: #000; /* Set text color */
+    border: none; /* Remove default border */
+    border-radius: 50px; 
+    padding: 10px 15px; /* Add some padding */
+    margin-right: 5px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border: 2px solid #000;
+}
+
+.add-persona-button:hover {
+    background-color: #A3C7D6; /* Optional: darker shade on hover */
+}
+
+.persona-text {
+    font-size: 16px; /* Adjust font size as needed */
+    
+}

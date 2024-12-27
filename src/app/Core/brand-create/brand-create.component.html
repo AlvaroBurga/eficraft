@@ -42,6 +42,13 @@
                 Launch Status is required.
             </div>
         </div>
+        <div class="persona-containter">
+            <button type="button" class="add-persona-button" (click)="addPersona()">
+                <i class="fas fa-plus"></i>
+            </button>
+            <p class="persona-text">Add Persona</p>
+        </div>
+        
         <div class="file-upload">
             <input type="file" id="logo" (change)="onLogoUpload($event)" accept="image/*">
             <label for="logo" class="custom-file-upload">

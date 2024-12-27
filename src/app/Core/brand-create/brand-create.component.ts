@@ -12,7 +12,6 @@ import { BrandService } from 'src/service/brand.service';
 export class BrandCreateComponent implements OnInit {
 
   brandForm: FormGroup;
-  brand: Brand = new Brand();
   drugTypes: string[] = ['otc', 'prescription', 'generic'];
   launchStatuses: string[] = ['preclinical','clinical trials','approved', 'launched'];
 
@@ -37,8 +36,18 @@ export class BrandCreateComponent implements OnInit {
   onSubmit() {
     if (this.brandForm.valid) {
         console.log('Form submitted successfully:', this.brandForm.value);
-        this.router.navigate(['/brands']);
-        // Handle form submission logic here (e.g., send to backend)
+        const brand = new Brand();
+
+        brand.name = this.brandForm.get('name')?.value;
+        brand.nonPropietaryName = this.brandForm.get('nonPropietaryName')?.value;
+        brand.drugType = this.brandForm.get('drugType')?.value;
+        brand.indication = this.brandForm.get('indication')?.value;
+        brand.launchStatus = this.brandForm.get('launchStatus')?.value;
+        brand.logo = this.brandForm.get('logo')?.value;
+
+        this.brandService.addNewBrand(brand);
+
+        this.router.navigate(['/core/brands']);
     } else {
         console.log('Please fill all required fields.');
         this.brandForm.markAllAsTouched(); // Mark all fields as touched to show validation errors
@@ -56,5 +65,10 @@ export class BrandCreateComponent implements OnInit {
       reader.readAsDataURL(file);
     }
   }
+
+  addPersona() {
+    // Logic to add a persona
+    console.log('Add Persona button clicked');
+}
 
 }

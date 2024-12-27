@@ -9,11 +9,11 @@ import { Brand } from 'src/app/Model/Brand';
 })
 export class BrandService {
 
-  private apiUrl = 'https://endpoint.com/images'; // Replace with your API URL
+  private brands : Brand[] = [];
+  private id = 5;
 
-  constructor(private http: HttpClient) { }
 
-  getBrands(): Observable<Brand[]> {
+  constructor(private http: HttpClient) {
     const logos = [
       'assets/images/brands/image1.png',
       'assets/images/brands/image2.png',
@@ -29,17 +29,24 @@ export class BrandService {
       'Prestat'
     ]
 
-    let brands : Brand[] = [];
-
     for (let i = 0; i < names.length; i++) {
       let brand: Brand = new Brand();
       brand.name = names[i];
       brand.logo = logos[i];
       
-      brands.push(brand);
+      this.brands.push(brand);
   }
 
-    return of(brands); 
+   }
+
+  getBrands(): Observable<Brand[]> {
+    return of(this.brands); 
+  }
+
+  addNewBrand(brand : Brand){
+    this.id++;
+    brand.id = this.id;
+    this.brands.push(brand);
   }
 
 }
