@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Brand } from 'src/app/Model/Brand';
 import { BrandService } from 'src/service/brand.service';
@@ -18,7 +19,8 @@ export class BrandCreateComponent implements OnInit {
   constructor(
     private brandService : BrandService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
       this.brandForm = this.fb.group({
         name: ['', Validators.required],
@@ -35,7 +37,6 @@ export class BrandCreateComponent implements OnInit {
 
   onSubmit() {
     if (this.brandForm.valid) {
-        console.log('Form submitted successfully:', this.brandForm.value);
         const brand = new Brand();
 
         brand.name = this.brandForm.get('name')?.value;
@@ -47,9 +48,10 @@ export class BrandCreateComponent implements OnInit {
 
         this.brandService.addNewBrand(brand);
 
+        this.showSuccessToast(brand.name)
+
         this.router.navigate(['/core/brands']);
     } else {
-        console.log('Please fill all required fields.');
         this.brandForm.markAllAsTouched(); // Mark all fields as touched to show validation errors
     }
 }
@@ -69,6 +71,15 @@ export class BrandCreateComponent implements OnInit {
   addPersona() {
     // Logic to add a persona
     console.log('Add Persona button clicked');
-}
+  }
+
+  showSuccessToast(name : string) {
+    console.log("llego aqui")
+    this.snackBar.open('Brand created ' + name + ' successfully!', 'X', {
+      duration: 10000, // Duration in milliseconds (10 seconds)
+      verticalPosition: 'bottom', 
+      horizontalPosition: 'center',
+    });
+  }
 
 }

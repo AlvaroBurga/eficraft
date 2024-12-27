@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Brand } from 'src/app/Model/Brand';
 
 
@@ -11,6 +11,8 @@ export class BrandService {
 
   private brands : Brand[] = [];
   private id = 5;
+  private activeBrandSubject = new BehaviorSubject<Brand>(this.getActiveBrand());
+  activeBrand$ = this.activeBrandSubject.asObservable();
 
 
   constructor(private http: HttpClient) {
@@ -47,6 +49,16 @@ export class BrandService {
     this.id++;
     brand.id = this.id;
     this.brands.push(brand);
+  }
+
+  getActiveBrand(): Brand {
+    const brandData = sessionStorage.getItem('activeBrand');
+    return brandData ? JSON.parse(brandData) : null;
+  }
+
+  setActiveBrand(brand: Brand) {
+    sessionStorage.setItem('activeBrand', JSON.stringify(brand));
+    this.activeBrandSubject.next(brand);
   }
 
 }

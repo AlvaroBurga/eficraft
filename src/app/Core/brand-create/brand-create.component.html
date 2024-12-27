@@ -58,7 +58,7 @@
         <div *ngIf="brandForm.get('logo')?.value" class="image-preview">
             <img [src]="brandForm.get('logo')?.value" alt="Logo Preview" class="preview-image">
         </div>
-        <div class="column">
+        <div class="row-block">
             <button type="submit" class="cancel-button" [routerLink]="['/core/brands']" >Cancel</button>
             <button type="submit" class="submit-button" [disabled]="brandForm.invalid">Create Brand</button>
         </div>

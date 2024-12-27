@@ -18,6 +18,8 @@ import { ContentComponent } from './Core/content/content.component';
 import { CoreComponent } from './Core/core/core.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrandCreateComponent } from './Core/brand-create/brand-create.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { BrandCreateComponent } from './Core/brand-create/brand-create.component
     BrowserAnimationsModule,
     MatPaginatorModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

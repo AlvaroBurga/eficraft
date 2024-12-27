@@ -11,6 +11,7 @@ import { BrandService } from 'src/service/brand.service';
 export class BrandsComponent implements OnInit {
 
   brands: Brand[] = [];
+  activeBrand : Brand = new Brand();
   currentPage: number = 0;
   pageSize: number = 6;
   displayedImages: Brand[] = [];  
@@ -56,8 +57,11 @@ export class BrandsComponent implements OnInit {
   }
 
   createBrand() {
-    console.log("llega aqui")
     this.router.navigate(['/core/brands/create']); // Navigate to the create brand page
+  }
+
+  setActiveBrand(brand :Brand) {
+    this.brandService.setActiveBrand(brand);
   }
 
 }

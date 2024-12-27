@@ -13,13 +13,13 @@ a {
   margin-left: 5%;
 }
 
-.row {
+.row-block {
   display: flex;
   flex-direction: row;
 }
-.column {
+.column-block {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

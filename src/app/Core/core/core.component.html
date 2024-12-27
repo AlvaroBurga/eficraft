@@ -1,12 +1,19 @@
-<div class="d-flex">
+<div class="column">
     
     <div class="sidebar">
         <app-sidebar></app-sidebar> 
     </div>
-    <div class="flex-grow-1">
+    <div class="column-block right-side">
         <app-navbar></app-navbar> 
-        <div class="content">
-            <router-outlet></router-outlet>
+        <div class="row-block">
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
+            <div *ngIf = "brand != null" class="active-brand">
+                <img [src]="brand.logo" class="active-logo">
+                <p>{{brand.name}}</p>
+            </div>
         </div>
     </div>
+
 </div>

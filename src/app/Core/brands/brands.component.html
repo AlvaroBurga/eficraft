@@ -13,7 +13,7 @@
     </div>
 
     <div class="image-gallery">
-        <img *ngFor="let brand of displayedImages" [src]="brand.logo" alt="Image" class = "brandElements">
+        <img *ngFor="let brand of displayedImages" [src]="brand.logo" alt="Image" class = "brandElements" (click) = "setActiveBrand(brand)">
     </div>
     <mat-paginator [length]="filteredBrands.length"
                     [pageSize]="pageSize"
