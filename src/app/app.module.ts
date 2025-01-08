@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button'
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -19,6 +23,9 @@ import { CoreComponent } from './Core/core/core.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrandCreateComponent } from './Core/brand-create/brand-create.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -40,7 +47,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatTableModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSortModule,
+    MatIconModule,
     HttpClientModule,
     ReactiveFormsModule,
     MatSnackBarModule

@@ -1,1 +1,55 @@
-<p>references works!</p>
+<h1>References</h1>
+
+<div class="utils">    
+    <div class="search-bar">
+        <mat-form-field appearance="fill">
+            <mat-label>Search</mat-label>
+            <input matInput (input)="applyFilter($event)">
+        </mat-form-field>
+    </div>
+
+    <div class="upload-button">
+        <button mat-raised-button class="button-style" (click)="onUpload()">
+            <mat-icon>cloud_upload</mat-icon> Upload Document
+        </button>
+    </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="centered-header"> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="authors">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="centered-header"> Authors </th>
+        <td mat-cell *matCellDef="let element"> {{element.authors}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="journal">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="centered-header"> Journal </th>
+        <td mat-cell *matCellDef="let element"> {{element.journal}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="centered-header"> Year </th>
+        <td mat-cell *matCellDef="let element"> {{element.year}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-button (click)="onDownload(element)"><mat-icon>download</mat-icon></button>
+            <button mat-button color="warn" (click)="onDelete(element)"><mat-icon>delete</mat-icon></button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [length]="dataSource.data.length"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 20]"
+               (page)="pageEvent = $event">
+</mat-paginator>
