@@ -11,9 +11,6 @@
         <div>
             <label for="nonPropietaryName">Non-Proprietary Name:</label>
             <input type="text" id="nonPropietaryName" formControlName="nonPropietaryName">
-            <div *ngIf="brandForm.get('nonPropietaryName')?.invalid && brandForm.get('nonPropietaryName')?.touched" class="error-message">
-                Non-Proprietary Name is required.
-            </div>
         </div>
         <div>
             <label for="drugType">Drug Type:</label>
@@ -28,9 +25,6 @@
         <div>
             <label for="indication">Indication:</label>
             <input type="text" id="indication" formControlName="indication">
-            <div *ngIf="brandForm.get('indication')?.invalid && brandForm.get('indication')?.touched" class="error-message">
-                Indication is required.
-            </div>
         </div>
         <div>
             <label for="launchStatus">Launch Status:</label>

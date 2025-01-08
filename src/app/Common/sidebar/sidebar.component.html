@@ -4,9 +4,17 @@
     </div>
     <ul class="list-unstyled">
         <li><a routerLink="/core/brands" class="sidebar-link brand-link">Brands</a></li>
-        <li><a routerLink="/core/overview" class="sidebar-link">Overview</a></li>
-        <li><a routerLink="/core/reference" class="sidebar-link">References</a></li>
-        <li><a routerLink="/core/facts" class="sidebar-link">Facts</a></li>
-        <li><a routerLink="/core/content" class="sidebar-link">Content</a></li>
+        <li>
+            <a routerLink="/core/overview" class="sidebar-link" [class.disabled]="!brand">Overview</a>
+        </li>
+        <li>
+            <a routerLink="/core/reference" class="sidebar-link" [class.disabled]="!brand">References</a>
+        </li>
+        <li>
+            <a routerLink="/core/facts" class="sidebar-link" [class.disabled]="!brand">Facts</a>
+        </li>
+        <li>
+            <a routerLink="/core/content" class="sidebar-link" [class.disabled]="!brand">Content</a>
+        </li>
     </ul>
 </div>

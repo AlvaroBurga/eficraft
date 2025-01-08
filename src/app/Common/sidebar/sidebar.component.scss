@@ -43,9 +43,15 @@ $secondary-color: #487BA2;
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically */
-  }
+}
   
-  .efficraft-logo img {
-    max-width: 100%;         /* Responsive */
-    height: auto;            /* Maintain aspect ratio */
-  }
+.efficraft-logo img {
+max-width: 100%;         /* Responsive */
+height: auto;            /* Maintain aspect ratio */
+}
+
+.disabled {
+    pointer-events: none; /* Prevents clicking */
+    text-decoration: none; /* Remove underline */
+    cursor: not-allowed; 
+}

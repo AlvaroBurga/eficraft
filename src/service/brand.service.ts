@@ -35,11 +35,14 @@ export class BrandService {
       let brand: Brand = new Brand();
       brand.name = names[i];
       brand.logo = logos[i];
+      brand.id = i+1;
+      brand.drugType = 'otc';
+      brand.launchStatus = 'preclinical'
       
       this.brands.push(brand);
-  }
+    }
 
-   }
+  }
 
   getBrands(): Observable<Brand[]> {
     return of(this.brands); 
@@ -49,6 +52,11 @@ export class BrandService {
     this.id++;
     brand.id = this.id;
     this.brands.push(brand);
+  }
+
+  updateBranch(brand : Brand){
+    this.brands[brand.id-1] = brand;
+    this.setActiveBrand(brand);
   }
 
   getActiveBrand(): Brand {

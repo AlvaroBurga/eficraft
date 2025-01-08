@@ -24,9 +24,9 @@ export class BrandCreateComponent implements OnInit {
   ) {
       this.brandForm = this.fb.group({
         name: ['', Validators.required],
-        nonPropietaryName: ['', Validators.required],
+        nonPropietaryName: ['', ],
         drugType: ['', Validators.required],
-        indication: ['', Validators.required],
+        indication: ['', ],
         launchStatus: ['', Validators.required],
         logo: [null, Validators.required]
       });
@@ -74,7 +74,6 @@ export class BrandCreateComponent implements OnInit {
   }
 
   showSuccessToast(name : string) {
-    console.log("llego aqui")
     this.snackBar.open('Brand created ' + name + ' successfully!', 'X', {
       duration: 10000, // Duration in milliseconds (10 seconds)
       verticalPosition: 'bottom', 
