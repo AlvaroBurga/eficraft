@@ -32,11 +32,11 @@ $secondary-color: #487BA2;
 }
 
 .brand-link {
-    font-size: 3em; /* Increase font size */
+    font-size: 2em; /* Increase font size */
     font-weight: bold; /* Make the text bold */
-    margin-bottom: 100px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 75px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .efficraft-logo {
@@ -46,8 +46,9 @@ $secondary-color: #487BA2;
 }
   
 .efficraft-logo img {
-max-width: 100%;         /* Responsive */
-height: auto;            /* Maintain aspect ratio */
+    max-width: 100%;         /* Responsive */
+    height: auto;            /* Maintain aspect ratio */
+    filter: brightness(0%);
 }
 
 .disabled {
