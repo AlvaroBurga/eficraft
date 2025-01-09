@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Reference } from 'src/app/Model/Reference';
+import { ReferenceService } from 'src/service/reference.service';
 
 @Component({
   selector: 'app-references',
@@ -16,16 +17,10 @@ export class ReferencesComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor() {}
+  constructor(private referenceService: ReferenceService) {}
 
   ngOnInit(): void {
-      // Replace with your data fetching logic
-      this.dataSource.data = [
-        new Reference(1, 'Article 1', 'Author A', 'Journal A', 2021),
-        new Reference(2, 'Article 2', 'Author B', 'Journal B', 2020),
-        new Reference(3, 'Article 3', 'Author C', 'Journal C', 2022),
-        new Reference(4, 'Article 4', 'Author D', 'Journal D', 2019)
-    ];
+    this.getReferences()
   }
 
   ngAfterViewInit(): void {
@@ -38,19 +33,23 @@ export class ReferencesComponent implements OnInit, AfterViewInit {
 }
 
   onUpload(): void {
-      // Logic for upload
-      console.log('Upload button clicked');
+     this.referenceService.uploadReference();
   }
 
   onDownload(element: Reference): void {
-      // Logic for downloading the selected entry
-      console.log('Download button clicked for', element);
+     console.log("Downloading")
+      
+  }
+
+  getReferences(){
+    this.referenceService.getReferences().subscribe(references => {
+      this.dataSource.data = references;
+    });
   }
 
   onDelete(element: Reference): void {
-      // Logic for deleting the selected entry
-      console.log('Delete button clicked for', element);
-      this.dataSource.data = this.dataSource.data.filter(item => item !== element);
+    this.referenceService.deleteReference(element);
+    this.getReferences();
   }
 
 }
