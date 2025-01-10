@@ -1,0 +1,43 @@
+.upload-button {
+    margin: 20px 0;
+}
+
+.search-bar {
+    margin: 20px 0;
+}
+
+.mat-form-field {
+    width: 200%;
+}
+
+table {
+    width: 100%;
+}
+
+.utils {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mat-header-cell {
+    background-color: #B5DADC; 
+    color: black;
+    font-weight: bold;
+    font-size: 16px; 
+    padding: 16px; 
+    text-align: center; 
+}
+
+.mat-cell {
+    text-align: center;
+}
+
+.button-style{
+    background-color: #487BA2;
+    color: white; /* White text */
+}
+
+.button-style:hover {
+    background-color: #385f7d;
+  }
