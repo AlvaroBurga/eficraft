@@ -1,0 +1,42 @@
+.container {
+    text-align: center;
+    margin: 30px;
+  }
+  
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  button {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #B5DADC;
+  }
+  
+  mat-icon {
+    color: #B5DADC;
+  }
+  
+  table {
+    width: 100%; /* Make the table take the full width of its container */
+  }
+  
+  .mat-form-field {
+    width: 100%; /* Ensure the search bar also takes full width */
+  }
+  
+  .mat-elevation-z8 {
+    margin: 20px 0; /* Add some margin for better spacing */
+  }
+
+  /* Center the table header text */
+th.mat-header-cell {
+    text-align: center;
+  }

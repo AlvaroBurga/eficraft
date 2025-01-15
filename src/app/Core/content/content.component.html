@@ -1,1 +1,85 @@
-<p>content works!</p>
+<div class="container">
+    <h1>What are you creating today?</h1>
+    <div class="button-grid">
+      <button mat-raised-button>
+        <mat-icon>assignment</mat-icon>
+        Detail Aid
+      </button>
+      <button mat-raised-button>
+        <mat-icon>description</mat-icon>
+        Leaflet
+      </button>
+      <button mat-raised-button>
+        <mat-icon>email</mat-icon>
+        Email
+      </button>
+      <button mat-raised-button>
+        <mat-icon>flag</mat-icon>
+        Banner
+      </button>
+      <button mat-raised-button>
+        <mat-icon>chrome_reader_mode</mat-icon>
+        Brochure
+      </button>
+      <button mat-raised-button>
+        <mat-icon>article</mat-icon>
+        Article
+      </button>
+      <button mat-raised-button>
+        <mat-icon>share</mat-icon>
+        Social Media
+      </button>
+    </div>
+  </div>
+
+<div class="container">
+    <h2>Recently Created Content</h2>
+  <mat-form-field appearance="standard">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search content">
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+    <!-- Icon Column -->
+    <ng-container matColumnDef="icon">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon>{{element.icon}}</mat-icon>
+      </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Content Type Column -->
+    <ng-container matColumnDef="contentType">
+      <th mat-header-cell *matHeaderCellDef> Content Type </th>
+      <td mat-cell *matCellDef="let element"> {{element.contentType}} </td>
+    </ng-container>
+
+    <!-- Audience Column -->
+    <ng-container matColumnDef="audience">
+      <th mat-header-cell *matHeaderCellDef> Audience </th>
+      <td mat-cell *matCellDef="let element"> {{element.audience}} </td>
+    </ng-container>
+
+    <!-- Topic Column -->
+    <ng-container matColumnDef="topic">
+      <th mat-header-cell *matHeaderCellDef> Topic </th>
+      <td mat-cell *matCellDef="let element"> {{element.topic}} </td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date | date}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
