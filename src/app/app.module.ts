@@ -25,6 +25,8 @@ import { BrandCreateComponent } from './Core/brand-create/brand-create.component
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
+import { ReferenceUploadComponent } from './Core/reference-upload/reference-upload.component';
+import { ContentCreateComponent } from './Core/content-create/content-create.component';
 
 
 
@@ -40,7 +42,9 @@ import { MatIconModule } from '@angular/material/icon';
     FactsComponent,
     ContentComponent,
     CoreComponent,
-    BrandCreateComponent
+    BrandCreateComponent,
+    ReferenceUploadComponent,
+    ContentCreateComponent
   ],
   imports: [
     BrowserModule,

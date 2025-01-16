@@ -4,13 +4,14 @@ export class Reference {
     authors : string;
     journal : string;
     year : number;
+    file?: File;
 
-    constructor(id: number, name: string, authors: string, journal: string, year: number) {
-        this.id = id;
-        this.name = name;
-        this.authors = authors;
-        this.journal = journal;
-        this.year = year;
+    constructor(id?: number, name?: string, authors?: string, journal?: string, year?: number,file? : File) {
+        this.id = id ?? 0;                
+        this.name = name ?? "Unknown";    
+        this.authors = authors ?? "Anonymous";
+        this.journal = journal ?? "N/A";   
+        this.year = year ?? new Date().getFullYear(); 
+        this.file = file; 
     }
-
 }

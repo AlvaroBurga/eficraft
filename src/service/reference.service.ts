@@ -22,8 +22,8 @@ export class ReferenceService {
     return of(this.references); 
   }
 
-  uploadReference() {
-    console.log('Upload button clicked');
+  uploadReference(reference : Reference) {
+    this.references.push(reference);
   }
 
   deleteReference(element: Reference) {
