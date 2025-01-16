@@ -18,4 +18,8 @@ export class ContentService {
     return of(this.contents);
   }
 
+  saveContent(content : Content){
+    this.contents.push(content);
+  }
+
 }

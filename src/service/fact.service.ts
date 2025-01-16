@@ -50,7 +50,7 @@ export class FactService {
   constructor() { }
 
   getFacts(): Observable<Fact[]> {
-    return of(this.facts).pipe(delay(1000)); 
+    return of(this.facts); 
   }
 
   updateFact(element: Fact) {

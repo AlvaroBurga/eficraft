@@ -1,1 +1,35 @@
-<p>content-create works!</p>
+<div class="content-create-container">
+    <h2>New {{contentType}}</h2>
+    <form [formGroup]="contentForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" formControlName="title">
+            <div *ngIf="contentForm.get('title')?.invalid && contentForm.get('title')?.touched" class="error-message">
+                Title is required.
+            </div>
+        </div>
+        <div>
+            <label for="audience">Audience:</label>
+            <input type="text" id="audience" formControlName="audience">
+        </div>
+        <div>
+            <label for="topic">Topic:</label>
+            <input type="text" id="topic" formControlName="topic">
+        </div>
+        <div>
+            <label for="words">Number of words:</label>
+            <input type="number" id="words" formControlName="words">
+        </div>
+        <div>
+            <label for="comments">Comments:</label>
+            <input type="text" id="comments" formControlName="comments">
+        </div>
+
+
+        <div class="row-block">
+            <button type="submit" class="cancel-button" [routerLink]="['/core/content']" >Cancel</button>
+            <button type="submit" class="submit-button" [disabled]="contentForm.invalid">Create content</button>
+        </div>
+        
+    </form>
+</div>

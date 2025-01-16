@@ -2,6 +2,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Content } from 'src/app/Model/Content';
 import { ContentService } from 'src/service/content.service';
 
@@ -17,7 +18,10 @@ export class ContentComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private contentService: ContentService) {
+  constructor(
+    private contentService: ContentService,
+    private router: Router
+  ) {
     
   }
 
@@ -35,5 +39,9 @@ export class ContentComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  navigateToCreate(type: string): void {
+    this.router.navigate(['core/content/create'], { queryParams: { type } });
   }
 }
