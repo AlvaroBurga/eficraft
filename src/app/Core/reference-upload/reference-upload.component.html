@@ -1,0 +1,51 @@
+<div class="reference-create-container">
+    <h2>Upload a reference</h2>
+    <form [formGroup]="referenceForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" formControlName="name">
+            <div *ngIf="referenceForm.get('name')?.invalid && referenceForm.get('name')?.touched" class="error-message">
+                Name is required.
+            </div>
+        </div>
+        <div>
+            <label for="authors">Authors:</label>
+            <input type="text" id="authors" formControlName="authors">
+            <div *ngIf="referenceForm.get('authors')?.invalid && referenceForm.get('authors')?.touched" class="error-message">
+                Authors are required.
+            </div>
+        </div>
+        <div>
+            <label for="journal">Journal:</label>
+            <input type="text" id="journal" formControlName="journal">
+            <div *ngIf="referenceForm.get('journal')?.invalid && referenceForm.get('journal')?.touched" class="error-message">
+                Journal is required.
+            </div>
+        </div>
+        <div>
+            <label for="year">Year:</label>
+            <input type="number" id="year" formControlName="year">
+            <div *ngIf="referenceForm.get('year')?.invalid && referenceForm.get('year')?.touched" class="error-message">
+                Year is required.
+            </div>
+        </div>
+
+        
+        <div class="file-upload">
+            <input type="file" id="file" (change)="onFileUpload($event)" accept="application/pdf">
+            <label for="file" class="custom-file-upload">
+                <i class="fas fa-upload"></i> Upload File
+            </label>
+        </div>
+        <div *ngIf="uploadedFileName" class="uploaded-file-info">
+            <a *ngIf="fileDataUrl" [href]="fileDataUrl" [attr.download]="uploadedFileName">
+                <p>{{ uploadedFileName }}</p>
+            </a>
+        </div>
+        <div class="row-block">
+            <button type="submit" class="cancel-button" [routerLink]="['/core/reference']" >Cancel</button>
+            <button type="submit" class="submit-button" [disabled]="referenceForm.invalid">Create reference</button>
+        </div>
+        
+    </form>
+</div>

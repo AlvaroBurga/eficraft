@@ -28,7 +28,7 @@ export class BrandCreateComponent implements OnInit {
         drugType: ['', Validators.required],
         indication: ['', ],
         launchStatus: ['', Validators.required],
-        logo: [null, Validators.required]
+        logo: [null, Validators.required] 
       });
    }
 

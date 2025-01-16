@@ -32,14 +32,34 @@ export class ReferencesComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
-  onUpload(): void {
-     this.referenceService.uploadReference();
-  }
+onDownload(element: Reference): void {
+  if (element.file) {
+      const fileURL = URL.createObjectURL(element.file);
 
-  onDownload(element: Reference): void {
-     console.log("Downloading")
+      const link = document.createElement('a');
+      link.href = fileURL;
+      link.download = element.name; 
+      document.body.appendChild(link);
+      link.click();
+
+      document.body.removeChild(link);
+      URL.revokeObjectURL(fileURL);
+  } else {
+      const title = element.name || 'Untitled';
+      const blob = new Blob([], { type: 'text/plain' });
+      const emptyFileURL = URL.createObjectURL(blob);
+
+      const link = document.createElement('a');
+      link.href = emptyFileURL;
+      link.download = `${title}.txt`; 
+      document.body.appendChild(link);
       
+      link.click();
+
+      document.body.removeChild(link);
+      URL.revokeObjectURL(emptyFileURL);
   }
+}
 
   getReferences(){
     this.referenceService.getReferences().subscribe(references => {
